@@ -13,7 +13,7 @@ provider "aws" {
 # Create S3 bucket
 resource "aws_s3_bucket" "my_bucket_labten" {
   bucket = "terraform-lab-ten-kpmg"  # Change this to your desired bucket name
-  aws_s3_bucket_acl    = "public-read"  # Use 'public-read' if you want to enable ACLs for public access
+  acl    = "public-read"  # Use 'public-read' if you want to enable ACLs for public access
 
   tags = {
     Name        = "My S3 Bucket"
