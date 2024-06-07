@@ -86,6 +86,8 @@ variable "AMIS" {
 Once done, save the file and follow further steps.
 ```
 vi provider.tf
+```
+```
 provider "aws" {
   region = var.AWS_REGION
 }
@@ -104,6 +106,7 @@ terraform {
   }
 }
 ```
+```
 cat backend.tf
 ```
 ```
@@ -121,7 +124,7 @@ terraform plan
 ```
 terraform apply
 ```
-
+```
 Go to the S3 bucket and click on terraform > remotestate > In Properties Copy the Object URL and paste it in Browser. (By default it shows Access Denied)
 
 To view the content of the file, in S3 Bucket tab, Click on permission and click on Edit under Access control list (ACL) > Everyone (public access) > Check "Read" then check I understand the effects of these changes on this object and then Click on Save changes
@@ -129,6 +132,7 @@ To view the content of the file, in S3 Bucket tab, Click on permission and click
 Refresh the Object URL Page in the browser (or again Copy-paste the object URL into the web browser).
 Now, You should be able to access the state file and View the resources. (It shows the attributes of a single resource in the Terraform state of aws_instance.terraform-remoteState.)
 Use the terraform destroy command to clean the infrastructure used in this lab,
+```
 ```
 terraform destroy
 ```
