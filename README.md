@@ -11,8 +11,8 @@ provider "aws" {
 }
 
 # Create S3 bucket
-resource "aws_s3_bucket" "my_bucket_lab10" {
-  bucket = "terraform_lab_10_kpmg"  # Change this to your desired bucket name
+resource "aws_s3_bucket" "my_bucket_labten" {
+  bucket = "terraform_lab_ten_kpmg"  # Change this to your desired bucket name
   acl    = "public-read"  # Use 'public-read' if you want to enable ACLs for public access
 
   tags = {
@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "my_bucket_lab10" {
 
 # Disable block public access
 resource "aws_s3_bucket_public_access_block" "public_access_block" {
-  bucket = aws_s3_bucket.my_bucket_lab10.id
+  bucket = aws_s3_bucket.my_bucket_labten.id
 
   block_public_acls   = false
   block_public_policy = false
@@ -33,7 +33,7 @@ resource "aws_s3_bucket_public_access_block" "public_access_block" {
 
 # Enable versioning
 resource "aws_s3_bucket_versioning" "versioning" {
-  bucket = aws_s3_bucket.my_bucket_lab10.bucket
+  bucket = aws_s3_bucket.my_bucket_labten.bucket
 
   versioning_configuration {
     status = "Enabled"
