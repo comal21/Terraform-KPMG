@@ -7,7 +7,7 @@ vi s3.tf
 Add the below given lines, by pressing "INSERT"
 ```
 provider "aws" {
-  region = "us-east-2" 
+  region = "us-east-2"
 }
 
 # Create S3 bucket
@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "my_bucket_lab10" {
 
 # Disable block public access
 resource "aws_s3_bucket_public_access_block" "public_access_block" {
-  bucket = aws_s3_bucket.my_bucket.id
+  bucket = aws_s3_bucket.my_bucket_lab10.id
 
   block_public_acls   = false
   block_public_policy = false
@@ -33,13 +33,13 @@ resource "aws_s3_bucket_public_access_block" "public_access_block" {
 
 # Enable versioning
 resource "aws_s3_bucket_versioning" "versioning" {
-  bucket = aws_s3_bucket.my_bucket.bucket
+  bucket = aws_s3_bucket.my_bucket_lab10.bucket
 
   versioning_configuration {
     status = "Enabled"
   }
 }
-}
+
 ```
 Save the file using "ESCAPE + :wq!"
 ```
