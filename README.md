@@ -2,7 +2,7 @@
 
 Create a New Configuration File
 ```
-s3.tf
+vi s3.tf
 ```
 Add the below given lines, by pressing "INSERT"
 ```
